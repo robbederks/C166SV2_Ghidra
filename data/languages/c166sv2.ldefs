@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<language_definitions>
+  <language processor="C166S V2"
+            endian="little"
+            size="16"
+            variant="default"
+            version="1.0"
+            slafile="8051.sla"
+            processorspec="8051.pspec"
+            id="C166SV2:LE:16:default">
+    <description>Infineon C166S V2 Microcontroller Family</description>
+    <compiler name="default" spec="8051.cspec" id="default"/>
+  </language>
+</language_definitions>
