@@ -2,13 +2,11 @@
 
 <compiler_spec>
   <global>
-    <range space="CODE"/>
-    <range space="INTMEM"/>
-    <range space="SFR"/>
-    <range space="EXTMEM"/>
-    <range space="BITS"/>
+    <range space="RAM"/>
   </global>
-  <stackpointer register="SP" space="INTMEM" growth="positive"/>
+
+  <stackpointer register="SP" space="RAM" growth="negative"/>
+
   <default_proto>
     <prototype name="__stdcall" extrapop="-2" stackshift="-2" strategy="register">
       <input>
@@ -59,14 +57,4 @@
       </localrange>
     </prototype>
   </default_proto>
-  
-  <callfixup name="switch_override_ACC">
-    <pcode>
-      <body><![CDATA[
-			PC = inst_next + zext(ACC) * 3;
-            goto [PC];
-      ]]></body>
-    </pcode>
-  </callfixup>
-  
 </compiler_spec>

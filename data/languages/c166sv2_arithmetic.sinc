@@ -1,0 +1,25 @@
+
+### ADD ###
+
+:ADD gpr8_11, d13_15 is op=08 & gpr8_11 & d12_12=0 & d13_15 {
+    gpr8_11 = gpr8_11 + d13_15;
+}
+
+:ADD gpr8_11, gpr12_15 is op=00 & gpr8_11 & gpr12_15 {
+    gpr8_11 = gpr8_11 + gpr12_15;
+}
+
+:ADD gpr8_11, [gpr14_15+] is op=08 & gpr8_11 & d12_13=0b11 & gpr14_15 {
+    gpr8_11 = gpr8_11 + *[ram]gpr14_15;
+    gpr14_15 = gpr14_15 + 1;
+}
+
+:ADD gpr8_11, [gpr14_15+] is op=08 & gpr8_11 & d12_13=0b10 & gpr14_15 {
+    gpr8_11 = gpr8_11 + *[ram]gpr14_15;
+}
+
+# TODO: Fix reg8_15 mapping in attach variables!
+# It's a reference to any CPU register, not only R0-R15 (GPRs). See page 2-46
+:ADD d16_31, reg8_15 is op=04 & reg8_15; d16_31 {
+    *[ram]d16_31 = *[ram]d16_31 + reg8_15;
+}

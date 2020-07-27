@@ -10,6 +10,6 @@
             processorspec="8051.pspec"
             id="C166SV2:LE:16:default">
     <description>Infineon C166S V2 Microcontroller Family</description>
-    <compiler name="default" spec="8051.cspec" id="default"/>
+    <compiler name="default" spec="c166sv2.cspec" id="default"/>
   </language>
 </language_definitions>
